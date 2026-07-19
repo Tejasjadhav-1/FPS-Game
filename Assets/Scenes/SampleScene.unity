@@ -887,10 +887,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292c05a8e12c5944284593d8ce5326b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Playermovement
-  moveSpeed: 10
-  gravity: -9.8
-  jumpHeight: 0.5
-  sprintSpeed: 20
+  moveSpeed: 7
+  sprintSpeed: 12
+  jumpHeight: 2
+  sprintJumpBoost: 3
+  playerCamera: {fileID: 330585545}
+  normalFOV: 60
+  sprintFOV: 80
+  fovSmoothSpeed: 3
+  gravity: -25
 --- !u!143 &1483061431
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1295,13 +1300,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096790976}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.12206059, w: 0.99252266}
   m_LocalPosition: {x: -21.81, y: 1.1, z: 16.91}
   m_LocalScale: {x: 18.822384, y: 2.2092, z: 2.2092}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1127195803}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -14.022}
 --- !u!65 &2096790978
 BoxCollider:
   m_ObjectHideFlags: 0
