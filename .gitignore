@@ -1,0 +1,41 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+
+# Visual Studio / Rider
+.vs/
+.vscode/
+.idea/
+
+# Auto-generated project files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Plastic SCM
+.plastic/
+
+# Visual Studio
+.vs/
+.vsconfig
+
+# Editor extension files
+AGENTS.md
+ignore.conf
