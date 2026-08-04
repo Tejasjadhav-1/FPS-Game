@@ -6,6 +6,7 @@ public class CameraLook : MonoBehaviour
     [SerializeField] float mouseYawSensitivity = 100f;
     [SerializeField] float mousePitchSensitivity = 100f;
     [SerializeField] Transform cameraHolder;
+    
 
     float pitch;
 
@@ -13,21 +14,11 @@ public class CameraLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        LockCursor();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-         
 
         float mouseX = Input.GetAxisRaw("Mouse X"); 
         float mouseY = Input.GetAxisRaw("Mouse Y");
@@ -40,5 +31,17 @@ public class CameraLook : MonoBehaviour
 
         transform.Rotate(0f, mouseYaw, 0f);
         cameraHolder.localRotation = Quaternion.Euler(-pitch, 0f, 0f);
+    }
+
+    public void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
