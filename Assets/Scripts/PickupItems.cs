@@ -7,9 +7,9 @@ public class PickupItems : MonoBehaviour, IInteractable
     {
         return "Press E to pickup Heal";
     }
-    public void Interact()
+    public void Interact(GameObject player)
     {
-        PlayerHealth playerHealth = FindAnyObjectByType<PlayerHealth>();
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth != null )
         {
             playerHealth.Heal(healAmount);

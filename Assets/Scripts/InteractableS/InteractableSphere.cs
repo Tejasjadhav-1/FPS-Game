@@ -6,9 +6,10 @@ public class InteractableSphere : MonoBehaviour, IInteractable
     {
         return "Press E to interact with the sphere.";
     }
-    public void Interact()
+    public void Interact(GameObject player)
     {
         Debug.Log("Interacted with the sphere!");
+        
     }
 
 }

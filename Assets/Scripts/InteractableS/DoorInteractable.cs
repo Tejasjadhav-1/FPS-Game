@@ -4,14 +4,16 @@ using UnityEngine;
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
     
-     bool isOpen = false;
+    bool isOpen = false;
+
+    public bool IsOpen => isOpen;
 
     Quaternion openRotation;
     Quaternion closeRotation;
 
     [SerializeField] float rotationSpeed = 90f;
     [SerializeField] float openAngle = -90f;
-    
+
 
     private void Start()
     {
@@ -41,9 +43,18 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         }
         return "Press E to open the door";
     }
-    public void Interact()
+    public void Interact(GameObject player)
     {
         isOpen = !isOpen;
+    }
+
+    public void OpenDoor()
+    {
+        isOpen = true;
+    }
+    public void CloseDoor()
+    {
+        isOpen = false;
     }
 
 }

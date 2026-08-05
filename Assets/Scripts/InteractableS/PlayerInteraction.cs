@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
                 // Interact when the player presses E
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interactable.Interact();
+                    interactable.Interact(gameObject);
                 }
             }
             else
@@ -48,4 +49,5 @@ public class PlayerInteraction : MonoBehaviour
             interactionText.gameObject.SetActive(false);
         }
     }
+    
 }
