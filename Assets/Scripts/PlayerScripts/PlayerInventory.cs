@@ -8,7 +8,7 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] GameObject inventoryPannel;
     [SerializeField] TMP_Text inventoryItemsList;
-    List<string> items = new List<string>();
+    Dictionary<string, int> items = new Dictionary<string, int>();
 
     private void Update()
     {
@@ -26,21 +26,23 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(string itemName)
     {
-        if (!items.Contains(itemName))
+        if (!items.ContainsKey(itemName))
         {
-            items.Add(itemName);
+            items.Add(itemName, 1);
             UpdateInventoryUI();
             Debug.Log($"{itemName} added to inventory");
         }
         else
         {
+            items[itemName]++;
+            UpdateInventoryUI();
             Debug.Log($"{itemName} is already in inventory");
         }
     }
 
     public bool HasItem(string itemName)
     {
-        return items.Contains(itemName); 
+        return items.ContainsKey(itemName); 
     }
 
     private void UpdateInventoryUI()
@@ -52,9 +54,9 @@ public class PlayerInventory : MonoBehaviour
         else
         {
             string inventoryText = "";
-            foreach (string item in items)
+            foreach (KeyValuePair<string, int> item in items)
             {
-                inventoryText += "*" + item + "\n";
+                inventoryText += item.Key + " x" + item.Value + "\n";
             }
 
             inventoryItemsList.text = inventoryText;
